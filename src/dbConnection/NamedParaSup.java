@@ -13,6 +13,7 @@ public class NamedParaSup extends NamedParameterJdbcDaoSupport {
 	}
 
 	public int getCircleCount() {
+		//main fir likhungi
 		String sql = "Select * from circle";
 		// jdbcTemplate.setDataSource(getDataSource());
 		List<Map<String, Object>> list = this.getJdbcTemplate().queryForList(sql);

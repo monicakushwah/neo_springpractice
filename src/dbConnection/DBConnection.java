@@ -29,6 +29,7 @@ public class DBConnection {
 		}
 		
 //		dao.createTriangleTable();
+		//triple likhungi
 		
 		System.out.println("------success-----");
 		
