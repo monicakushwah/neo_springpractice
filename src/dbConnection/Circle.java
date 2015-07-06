@@ -4,11 +4,12 @@ package dbConnection;
 public class Circle {
 	private int id;
 	private String name;
-	
+	private String abc;
 	public Circle(int id, String name) {
 		setId(id);
 		setName(name);
 	}
+	//hello there
 	public Circle() {
 		// TODO Auto-generated constructor stub
 	}
