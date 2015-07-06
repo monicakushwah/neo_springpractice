@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	<context:annotation-config />
+	<context:component-scan base-package="dbConnection"/>
+	
+	<!-- <bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+	this does not support connection pooling. everytime  a connection has to be made,  it creates a new connection, not ideal for big real world
+	 -->
+	<bean id = "dataSource" class = "org.apache.commons.dbcp.BasicDataSource">
+		<property name ="driverClassName" value = "com.mysql.jdbc.Driver"/>
+		<property name ="url" value = "jdbc:mysql://localhost:3306/spring"/>
+		<property name = "initialSize" value = "2"/>
+		<property name = "maxActive" value = "5"/>
+	</bean>
+	
+	<bean id = "namedParaSup" class = "dbConnection.NamedParaSup">
+		<property name = "dataSource" ref = "dataSource"/>
+	</bean>
+
+</beans>
